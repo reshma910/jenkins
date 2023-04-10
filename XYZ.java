@@ -1,4 +1,4 @@
-class ABC{
+class XYZ{
 
 public static void main(String args[]){
 
