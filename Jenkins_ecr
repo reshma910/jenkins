@@ -1,0 +1,34 @@
+pipeline{
+agent any 
+
+environment{
+IMAGE_REPO_NAME="java"
+IMAGE_TAG="latest"
+}
+
+stages{
+//cloning git repo.
+stage('Cloning Git'){
+
+steps{
+script{
+   git branch:'master',
+   credentialsId:'0b82d991-1188-4b51-be28-109fe5e17b0b',
+   url: 'https://github.com/reshma910/jenkins.git'
+    
+}
+}
+
+}
+
+//Building Docker images
+
+stage('Building image'){
+steps{
+sh "docker build -t ${IMAGE_REPO_NAME}:${IMAGE_TAG} ."
+}
+}
+
+}
+
+}
