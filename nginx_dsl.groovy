@@ -1,4 +1,4 @@
-pipelineJob("Build-Deploy) {
+pipelineJob("Build-Deploy") {
  definition {
   cpsScm{
  scm{
