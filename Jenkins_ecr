@@ -11,12 +11,7 @@ stages{
 stage('Cloning Git'){
 
 steps{
-script{
-   git branch:'master',
-   credentialsId:'0b82d991-1188-4b51-be28-109fe5e17b0b',
-   url: 'https://github.com/reshma910/jenkins.git'
-    
-}
+checkout([$class:'GitSCM',branches: [[name: '*/master']], userRemoteConfigs: [[credentialsId: '0b82d991-1188-4b51-be28-109fe5e17b0b', url: 'https://github.com/reshma910/jenkins.git']])
 }
 
 }
