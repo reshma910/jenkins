@@ -20,10 +20,8 @@ checkout([$class:'GitSCM',branches: [[name: '*/master']], userRemoteConfigs: [[c
 
 stage('Building image'){
 steps{
-
- sh '''#!/bin/bash
-                 echo "hello world"  
-         '''
+ sh "cd C:\ProgramData\Jenkins\.jenkins\workspace\Build-Deploy"
+ sh "docker build -t ${IMAGE_REPO_NAME}:${IMAGE_TAG} ."
 }
 }
 
