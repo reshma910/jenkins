@@ -27,8 +27,8 @@ steps{
 //pushing docker image to docker hub
 stage('pushing image'){
 steps{
-bat "docker tag newdockerimage$:{IMAGE_TAG} reshmapatel1999/${IMAGE_REPO_NAME}:${IMAGE_TAG} "
-bat "docker push newdockerimage:${IMAGE_TAG}"
+bat "docker tag ${IMAGE_REPO_NAME}:${IMAGE_TAG} reshmapatel1999/newimage:version1.0"
+bat "docker push reshmapatel1999/newimage:version1.0"
 
 }
 }
