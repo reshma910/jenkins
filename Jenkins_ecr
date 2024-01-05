@@ -28,7 +28,7 @@ steps{
 stage('pushing image'){
 steps{
 bat "docker tag newdockerimage reshmapatel1999/${IMAGE_REPO_NAME}:${IMAGE_TAG} "
-bat "docker push newdockerimage"
+bat "docker push newdockerimage:${IMAGE_TAG}"
 
 }
 }
