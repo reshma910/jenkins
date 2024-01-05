@@ -28,7 +28,7 @@ steps{
 stage('pushing image'){
 steps{
 bat "docker tag ${IMAGE_REPO_NAME}:${IMAGE_TAG} reshmapatel1999/newimage:version1.0"
-bat "docker login -u "reshmapatel1999" -p "Reshma@123" docker.io"
+bat "docker login --username "reshmapatel1999" -password "Reshma@123" docker.io"
 bat "docker push reshmapatel1999/newimage:version1.0"
 
 }
