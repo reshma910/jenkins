@@ -27,7 +27,7 @@ steps{
 //pushing docker image to docker hub
 stage('pushing image'){
 steps{
-bat "docker login https://hub.docker.com --username=reshmapatel1999 --password=Reshma@123"
+bat "docker login https://hub.docker.com --username=reshmapatel1999 --password-stdin=Reshma@123"
 bat "docker tag ${IMAGE_REPO_NAME}:${IMAGE_TAG} reshmapatel1999/newimage:version1.0"
 bat "docker push reshmapatel1999/newimage:version1.0"
 
